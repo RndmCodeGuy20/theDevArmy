@@ -1,16 +1,21 @@
 {
   "name": "thedevarmy",
-  "version": "1.0.1",
+  "version": "1.1.2",
   "description": "CLI based info page for theDevArmy",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "cli"
+    "cli",
+    "thedevarmy",
+    "info",
+    "page"
   ],
+  "bin": "./index.js",
   "author": "RndmCodeGuy20",
   "license": "MIT",
   "dependencies": {

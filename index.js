@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // create a CLI for the user to see info about theDevArmy - theDevArmy is a group of developers who are passionate about coding and helping others learn to code.
 // The CLI should provide the following information:
 // - TheDevArmy's name
@@ -9,7 +10,8 @@
 // - TheDevArmy's social media links
 // - exit the CLI
 
-// #!/usr/bin/env node
+
+
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import clear from 'clear';
@@ -20,7 +22,7 @@ import {sleep} from "./helpers/helper.js";
 import {guests} from "./data/guests.js";
 
 
-clear();
+// clear();
 
 async function welcome() {
     console.log(
@@ -89,6 +91,8 @@ async function guestBook() {
         await sleep(1000);
     }
 }
+
+clear();
 
 await welcome();
 await sleep(1000);
