@@ -11,7 +11,6 @@
 // - exit the CLI
 
 
-
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import clear from 'clear';
@@ -22,7 +21,7 @@ import {sleep} from "./helpers/helper.js";
 import {guests} from "./data/guests.js";
 
 
-// clear();
+clear();
 
 async function welcome() {
     console.log(
@@ -40,13 +39,13 @@ async function welcome() {
 
     console.log(
         `
-         ${chalk.hex(flameColors[4])(")")}                           ╔═══════════════════════════════════════════════════════════╗
-          ${chalk.hex(flameColors[4])("(")}                          ║  Welcome to ${chalk.hex(colors[3])("theDevArmy")}, where coding meets community!     ║
-        ${chalk.hex(flameColors[3])("'    }")}                       ║  Explore the vast world of development, collaboration,    ║
-      ${chalk.hex(flameColors[3])("(    '  ")}                       ║  and innovation with our vibrant community of techies!    ║
-     ${chalk.hex(flameColors[3])("'      (")}                        ║  While you're here, don't forget to add your name to the  ║
-      ${chalk.hex(flameColors[2])(")")}  ${chalk.hex(colors[7])("|")}    ${chalk.hex(flameColors[2])(")")}                      ║  guestbook! We're glad you're here!                       ║
-    ${chalk.hex(flameColors[2])("'")}   ${chalk.hex(colors[7])("/|\\")}    ${chalk.hex(flameColors[3])("\`")}                     ╚═══════════════════════════════════════════════════════════╝
+         ${chalk.hex(flameColors[4])(")")}                         ╔═══════════════════════════════════════════════════════════╗
+          ${chalk.hex(flameColors[4])("(")}                        ║  Welcome to ${chalk.hex(colors[3])("theDevArmy")}, where coding meets community!     ║
+        ${chalk.hex(flameColors[3])("'    }")}                     ║  Explore the vast world of development, collaboration,    ║
+      ${chalk.hex(flameColors[3])("(    '  ")}                     ║  and innovation with our vibrant community of techies!    ║
+     ${chalk.hex(flameColors[3])("'      (")}                      ║  While you're here, don't forget to add your name to the  ║
+      ${chalk.hex(flameColors[2])(")")}  ${chalk.hex(colors[7])("|")}    ${chalk.hex(flameColors[2])(")")}                    ║  guestbook! We're glad you're here!                       ║
+    ${chalk.hex(flameColors[2])("'")}   ${chalk.hex(colors[7])("/|\\")}    ${chalk.hex(flameColors[3])("\`")}                   ╚═══════════════════════════════════════════════════════════╝
    ${chalk.hex(flameColors[3])(")")}   ${chalk.hex(colors[7])("/ | \\")}  ${chalk.hex(flameColors[2])("\` )")}                    
    ${chalk.hex(flameColors[2])("{")}   ${chalk.hex(colors[7])("| | |")}   ${chalk.hex(flameColors[2])("{")}                     
   ${chalk.hex(flameColors[3])("}")}    ${chalk.hex(colors[7])("| | |")}   ${chalk.hex(flameColors[2])(".")}                     
