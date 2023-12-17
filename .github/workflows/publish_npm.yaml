@@ -22,18 +22,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Clean Working Directory
-        run: git reset --hard && git clean -fd
+      #      - name: Configure Git Identity
+      #        run: |
+      #          git config --global user.email "shantanu.mane.200@outlook.com"
+      #          git config --global user.name "Shantanu Mane"
+      #
+      #      - name: Clean Git Directory
+      #        run: git
 
-      - name: Bump Version
-        run: npm version patch
-
-      - name: Push Changes
-        run: |
-          git push origin main
-          git push origin --tags
-
-      - name: Publish to NPM
+      - name: [ Bump Version and ] Publish to NPM
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
