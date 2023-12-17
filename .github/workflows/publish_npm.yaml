@@ -22,8 +22,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      #      - name: Bump Minor Version
-      #        run:
+      - name: Bump Minor Version
+        run: |
+          npm version patch
 
       - name: Publish to NPM
         run: npm publish
