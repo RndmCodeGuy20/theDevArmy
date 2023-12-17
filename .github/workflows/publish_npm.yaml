@@ -22,7 +22,10 @@ jobs:
         run: npm install
 
       - name: Bump Minor Version
-        run: npm version patch
+        run: |
+          git stash
+          npm version patch
+          git stash pop
 
       - name: Publish to NPM
         run: npm publish
