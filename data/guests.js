@@ -5,6 +5,6 @@ export const guests = [
     },
     {
         name: "Pratik Agrawal",
-        github: "https://github.com/RudraPratik99",
+        github: "https://github.com/RudraPratik30",
     },
 ]
