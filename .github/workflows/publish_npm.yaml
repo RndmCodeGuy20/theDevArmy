@@ -22,14 +22,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      #      - name: Configure Git Identity
-      #        run: |
-      #          git config --global user.email "shantanu.mane.200@outlook.com"
-      #          git config --global user.name "Shantanu Mane"
-      #
-      #      - name: Clean Git Directory
-      #        run: git
-
       - name: [ Bump Version and ] Publish to NPM
         run: npm publish
         env:
