@@ -21,13 +21,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Bump Minor Version
-        run: |
-          git stash
-          npm version patch
-          git stash pop
+      #      - name: Bump Minor Version
+      #        run:
 
       - name: Publish to NPM
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_2 }}
