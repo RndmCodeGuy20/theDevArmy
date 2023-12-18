@@ -25,9 +25,9 @@ jobs:
 
       - name: Bump Version
         run: |
-        git config --global user.name "dependabot[bot]"
-        git config --global user.email "dependabot[bot]@users.noreply.github.com"
-        npm version patch
+          git config --global user.name "dependabot[bot]"
+          git config --global user.email "dependabot[bot]@users.noreply.github.com"
+          npm version patch
 
       - name: Publish to NPM
         run: npm publish
