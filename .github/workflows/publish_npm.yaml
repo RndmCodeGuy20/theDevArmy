@@ -20,9 +20,10 @@ jobs:
         with:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
+          token: ${{ secrets.DEPENDABOT_SECRET }}
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Bump Version and Publish to NPM
         run: |
@@ -38,5 +39,4 @@ jobs:
           git push origin main
           git push origin --tags
         env:
-          GH_TOKEN: ${{ secrets.DEPENDABOT_SECRET }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
