@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.DEPENDABOT_SECRET }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -38,3 +40,4 @@ jobs:
           git push origin --tags
         env:
           GH_TOKEN: ${{ secrets.DEPENDABOT_SECRET }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
