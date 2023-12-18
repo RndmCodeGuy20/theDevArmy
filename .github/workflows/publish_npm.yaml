@@ -11,27 +11,28 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
-          registry-url: "https://registry.npmjs.org"
-          token: ${{ secrets.DEPENDABOT_SECRET }} 
+          node-version: 18
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Bump Version
+      - name: Bump Version and Publish to NPM
         run: |
-          git config --global user.name "dependabot[bot]"
-          git config --global user.email "dependabot[bot]@users.noreply.github.com"
-          npm version patch -m "Bump version to %s [skip ci]"
-          git commit -am "Bump version to $(node -p -e "require('./package.json').version") [skip ci]"
-          git push --follow-tags
-
-      - name: Publish to NPM
-        run: npm publish
+          git config --global user.email "shantanu.mane.200@ooutlook.com"
+          git config --global user.name "Shantanu Mane"
+          npm version patch
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push Changes
+        run: |
+          git push origin main
+          git push origin --tags
+        env:
+          GH_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
