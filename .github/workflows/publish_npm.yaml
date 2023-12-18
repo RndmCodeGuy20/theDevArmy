@@ -25,6 +25,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Configure git
+        run: |
+          git config --global user.name "Dependabot"
+          git config --global user.email "shantanu.mane.200@outlook.com"
+
       - name: Bump Version and Publish to NPM
         run: |
           npm version patch
@@ -32,6 +37,8 @@ jobs:
 
       - name: Push Changes
         run: |
+          git add .
+          git commit -m "Bump Version"
           git push origin main
           git push origin --tags
         env:
