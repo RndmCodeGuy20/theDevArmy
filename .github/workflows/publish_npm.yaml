@@ -35,8 +35,6 @@ jobs:
 
       - name: Push Changes
         run: |
-          git add .
-          git commit -m "Bump Version"
           git push origin main
           git push origin --tags
         env:
