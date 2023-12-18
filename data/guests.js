@@ -11,8 +11,4 @@ export const guests = [
         name: "Abhishek Deshpande",
         github: "https://github.com/deshabhishek007",
     },
-    {
-        name: "Rujuta Yugaonkar",
-        github: "https://github.com/rujutayug"
-    }
 ]
