@@ -23,8 +23,6 @@ jobs:
 
       - name: Bump Version and Publish to NPM
         run: |
-          git config --global user.email "shantanu.mane.200@ooutlook.com"
-          git config --global user.name "Shantanu Mane"
           npm version patch
           npm publish
         env:
