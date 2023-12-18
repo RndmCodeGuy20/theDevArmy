@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.DEPENDABOT_SECRET }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
@@ -31,8 +31,6 @@ jobs:
           git commit -m "Bump Version %s [skip ci]"
           npm version patch
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push Changes
         run: |
