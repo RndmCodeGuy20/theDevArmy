@@ -22,6 +22,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Bump Package Version 
+        run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "shantanu.mane.200@outlook.com"
+        npm version patch -m "Bump version to %s [skip ci]"
+        git add .
+        git commit -m "Bump version to $(node -p -e "require('./package.json').version") [skip ci]"
+        git push
+
       - name: Publish to NPM
         run: npm publish
         env:
