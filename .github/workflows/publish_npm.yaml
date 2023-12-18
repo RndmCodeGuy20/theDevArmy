@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
+          token: ${{ secrets.DEPENDABOT_SECRET }} 
 
       - name: Install Dependencies
         run: npm install
@@ -29,8 +30,6 @@ jobs:
           git add .
           git commit -m "ci: bump package version automatically [skip ci]"
           npm version patch -m "Bump version to %s [skip ci]"
-        with:
-          token: ${{ secrets.DEPENDABOT_SECRET }}
 
       - name: Publish to NPM
         run: npm publish
