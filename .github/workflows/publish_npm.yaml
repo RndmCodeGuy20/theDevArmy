@@ -30,12 +30,13 @@ jobs:
 
       - name: Bump Version and Publish to NPM
         run: |
-          npm version patch
+          npm version patch -m "Bump version to %s [skip ci]"
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push Changes
         run: |
           git push origin main
           git push origin --tags
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
